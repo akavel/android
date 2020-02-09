@@ -2,7 +2,7 @@ import jnim
 import jnim/java/lang # for Runnable
 import android / content / [ context_wrapper, intent ]
 import android/app/application
-import android/view/window_manager
+import android/view/[view, window_manager]
 import android/os/bundle
 
 jclass android.app.Activity* of ContextWrapper:
@@ -11,6 +11,7 @@ jclass android.app.Activity* of ContextWrapper:
     proc getApplication*(): Application
     proc getWindowManager*(): WindowManager
     proc onCreate*(savedInstanceState: Bundle)
+    proc setContentView*(v: View)
 
 var gCurrentActivity {.threadvar.}: Activity
 
